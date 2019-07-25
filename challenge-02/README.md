@@ -43,7 +43,15 @@ Crie uma função com as seguintes características:
     Preencha todos os valores corretamente!
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
-?
+function tresArgumentos(a,b,c){
+    var semNumero = "Preencha todos os valores corretamente!"
+  if(a === false && b === false && c === false){
+    return semNumero;
+  }
+  var multiplica = a*b*c + 2;
+  return multiplica;
+
+}
 
 // Invoque a função criada acima, passando só dois números como argumento.
 ?
