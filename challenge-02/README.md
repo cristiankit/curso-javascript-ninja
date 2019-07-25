@@ -45,7 +45,7 @@ Crie uma função com as seguintes características:
 */
 function tresArgumentos(a,b,c){
     var semNumero = "Preencha todos os valores corretamente!"
-  if(a === false && b === false && c === false){
+  if(a,b,c === NaN && a,b,c === undefined){
     return semNumero;
   }
   var multiplica = a*b*c + 2;
@@ -54,16 +54,16 @@ function tresArgumentos(a,b,c){
 }
 
 // Invoque a função criada acima, passando só dois números como argumento.
-?
+tresArgumentos(2,2);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+//Preencha todos os valores corretamente!
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
-?
+tresArgumentos(2,2,2);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+//10
 
 /*
 Crie uma função com as seguintes características:
@@ -74,7 +74,9 @@ Crie uma função com as seguintes características:
 5. Se nenhum argumento for passado, retorne o valor booleano `false`.
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
-?
+function tresArgumentosDenovo(a,b,c){
+  
+}
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
 ?
