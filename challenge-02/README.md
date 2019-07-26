@@ -45,11 +45,11 @@ Crie uma função com as seguintes características:
 */
 function tresArgumentos(a,b,c){
     var semNumero = "Preencha todos os valores corretamente!"
-  if(a,b,c === NaN && a,b,c === undefined){
+  if(a === undefined || b === undefined || c === undefined){
     return semNumero;
+  } else{
+      return (a *b * c) + 2;
   }
-  var multiplica = a*b*c + 2;
-  return multiplica;
 
 }
 
@@ -75,9 +75,26 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function tresArgumentosDenovo(a,b,c){
-  
+  if(a !== undefined && b === undefined && c === undefined){
+    return a;
+  } else if(a !== undefined && b != undefined && c === undefined){
+    return a+b;
+  } else if(a !== undefined && b !== undefined && c !== undefined){
+    return (a+b)/c;
+  } else if(a === undefined && b === undefined && c === undefined){
+    return false;
+  } else {
+    return null;
+  }  
 }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-?
+tresArgumentosDenovo() // false 
+
+tresArgumentosDenovo(2) // 2
+
+tresArgumentosDenovo(2,2) // 4
+
+tresArgumentosDenovo(2,2,2) // 2
+
 ```
