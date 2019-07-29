@@ -24,8 +24,8 @@ var pessoa =
     idade: 39,
     altura: 1.85,
     peso: 85,
-    andando: function() { false },
-    caminhouQuantosMetros: function(){ 0 }
+    andando: false,
+    caminhouQuantosMetros: 0,
     };
    
 
@@ -178,21 +178,28 @@ deve conter no retorno da frase acima é "metro" no lugar de "metros".
 método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
-pessoa.apresentacao = function(){
-	var feminino = "a";
-	var idadeUm = "ano";
-	var metrosCaminhados = "metro";
-	if(pessoa.sexo === "Feminino" && pessoa.idade !== 1 && pessoa.caminhouQuantosMetros !== 1 ){
-	return " Olá, eu sou " + feminino + " " + pessoa.nomeCompleto() + ", tenho " + pessoa.idade + " anos, " + pessoa.altura + ",  meu peso é " + pessoa.peso + " e, só hoje, eu já caminhei " + pessoa.caminhouQuantosMetros + " metros!"
-} else if(pessoa.sexo !== "Feminino" && pessoa.idade === 1 && pessoa.caminhouQuantosMetros !== 1){
-	return " Olá, eu sou o " + pessoa.nomeCompleto() + ", tenho " + pessoa.idade +" " + idadeUm + " " + pessoa.altura + ", meu peso é " + pessoa.peso + " e, só hoje, eu já caminhei " + pessoa.caminhouQuantosMetros + " metros!"
-}else if(pessoa.sexo !== "Feminino" && pessoa.idade !== 1 && pessoa.caminhouQuantosMetros === 1){
-	return " Olá, eu sou o " + pessoa.nomeCompleto() + ", tenho " + pessoa.idade + " ano, " + pessoa.altura + ", meu peso é " + pessoa.peso + " e, só hoje, eu já caminhei " + pessoa.caminhouQuantosMetros + " " + metrosCaminhados
-}else if(pessoa.sexo === "Feminino" && pessoa.idade === 1 && pessoa.caminhouQuantosMetros === 1){
-	return " Olá, eu sou " + feminino + " " + pessoa.nomeCompleto() + ", tenho " + pessoa.idade + " " + idadeUm + pessoa.altura + ", meu peso é " + pessoa.peso + " e, só hoje, eu já caminhei " + pessoa.caminhouQuantosMetros + " " + metrosCaminhados
-}else{
-	return pessoa.nomeCompleto() + ", tenho " + pessoa.idade + " anos, " + pessoa.altura + ", meu peso é " + pessoa.peso + " e, só hoje, eu já caminhei " + pessoa.caminhouQuantosMetros + " metros!"
-}
+pessoa.apresentacao = function (){
+var sex = "o";
+var idade = "anos";
+var metr = "metros";
+
+if(pessoa.sexo === "Feminino"){
+sex = "a";
+};
+
+if(pessoa.idade === 1){
+idade = "ano";
+};
+
+if(pessoa.caminhouQuantosMetros === 1){
+metr = "metro";
+};
+
+
+
+return "Olá, eu sou " + sex + " " + pessoa.nome + "" + pessoa.sobrenome + ", tenho " + pessoa.idade + " " + idade + ", " + pessoa.altura + ", meu peso é " 
++ pessoa.peso + " e, só hoje, eu já caminhei " + pessoa.caminhouQuantosMetros + " " + metr + "";
+
 };
 
 // Agora, apresente-se ;)
