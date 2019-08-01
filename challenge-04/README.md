@@ -86,19 +86,25 @@ var obterCor = function(){
 /*
 Crie um método chamado `obterModelo` que retorne o modelo do carro.
 */
-?
+var obterModelo = function(){
+  return carro.modelo;
+};
 
 /*
 Crie um método chamado `obterMarca` que retorne a marca do carro.
 */
-?
+var obterMarca = function(){
+  return carro.marca;
+};
 
 /*
 Crie um método chamado `obterMarcaModelo`, que retorne:
 "Esse carro é um [MARCA] [MODELO]"
 Para retornar os valores de marca e modelo, utilize os métodos criados.
 */
-?
+var obterMarcaModelo = function(){
+  return "Esse carro é um " + carro.marca + " " + carro.modelo + ""
+};
 
 /*
 Crie um método que irá adicionar pessoas no carro. Esse método terá as
@@ -116,7 +122,14 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 - Se couber somente mais uma pessoa, mostrar a palavra "pessoa" no retorno
 citado acima, no lugar de "pessoas".
 */
-?
+var adicionarPessoasnoCarro = funtion(numeroDePessoas){
+  var numeroDePessoas = "Já temos " + numeroDePessoas + " pessoas no carro!";
+  var carroCheio = "O carro já está lotado!";
+  var numeroDeAssentos = "Só cabem mais [QUANTIDADE_DE_PESSOAS_QUE_CABEM] pessoas!";
+  var pessoasSingular = "pessoas";
+  if(carro.quantidadePessoas === carro.assentos){carroCheio};
+  if(carro.quantidadePessoas <== carro.assentos-1 && numeroDePessoas > carro.assentos){numeroDeAssentos};
+};
 
 /*
 Agora vamos verificar algumas informações do carro. Para as respostas abaixo,
