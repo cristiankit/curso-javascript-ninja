@@ -125,10 +125,14 @@ citado acima, no lugar de "pessoas".
 var adicionarPessoasnoCarro = funtion(numeroDePessoas){
   var numeroDePessoas = "Já temos " + numeroDePessoas + " pessoas no carro!";
   var carroCheio = "O carro já está lotado!";
-  var numeroDeAssentos = "Só cabem mais [QUANTIDADE_DE_PESSOAS_QUE_CABEM] pessoas!";
+  var numeroDeAssentos = "Só cabem mais " + carro.quantidadePessoas + pessoasSingular + "!";
   var pessoasSingular = "pessoas";
-  if(carro.quantidadePessoas === carro.assentos){carroCheio};
-  if(carro.quantidadePessoas <== carro.assentos-1 && numeroDePessoas > carro.assentos){numeroDeAssentos};
+  if(carro.quantidadePessoas >= carro.assentos){carroCheio};
+  if(carro.quantidadePessoas <= carro.assentos-1 && numeroDePessoas > carro.assentos){numeroDeAssentos};
+  if(carro.quantidadePessoas === 4){
+  pessoasSingular = "pessoa";
+  return numeroDeAssentos;
+};
 };
 
 /*
