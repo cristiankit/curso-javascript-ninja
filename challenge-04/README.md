@@ -63,8 +63,8 @@ carro.ano =  "2020";
 carro.assentos = 5;
 carro.cor = "azul";
 carro.marca = "gol";
-carro.modelo = "2019";
-carro.placa = "12445WW";
+carro.modelo = "sport";
+carro.placa = "KIT-1980";
 carro.quantasPortas = 4;
 carro.quantidadePessoas = 0;
 
@@ -72,28 +72,28 @@ carro.quantidadePessoas = 0;
 Crie um método chamado `mudarCor` que mude a cor do carro conforme a cor
 passado por parâmetro.
 */
-var mudaCor = function(cor){
+carro.mudaCor = function(cor){
 	carro.cor = cor;
 }
 
 /*
 Crie um método chamado `obterCor`, que retorne a cor do carro.
 */
-var obterCor = function(){
+carro.obterCor = function(){
 	return carro.cor;
-}
+};
 
 /*
 Crie um método chamado `obterModelo` que retorne o modelo do carro.
 */
-var obterModelo = function(){
+carro.obterModelo = function(){
   return carro.modelo;
 };
 
 /*
 Crie um método chamado `obterMarca` que retorne a marca do carro.
 */
-var obterMarca = function(){
+carro.obterMarca = function(){
   return carro.marca;
 };
 
@@ -102,8 +102,8 @@ Crie um método chamado `obterMarcaModelo`, que retorne:
 "Esse carro é um [MARCA] [MODELO]"
 Para retornar os valores de marca e modelo, utilize os métodos criados.
 */
-var obterMarcaModelo = function(){
-  return "Esse carro é um " + carro.marca + " " + carro.modelo + ""
+carro.obterMarcaModelo = function(){
+  return "Esse carro é um " + carro.obterMarca() + " " + carro.obterModelo() + ""
 };
 
 /*
@@ -122,17 +122,24 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 - Se couber somente mais uma pessoa, mostrar a palavra "pessoa" no retorno
 citado acima, no lugar de "pessoas".
 */
-var adicionarPessoasnoCarro = funtion(numeroDePessoas){
-  var numeroDePessoas = "Já temos " + numeroDePessoas + " pessoas no carro!";
-  var carroCheio = "O carro já está lotado!";
-  var numeroDeAssentos = "Só cabem mais " + carro.quantidadePessoas + pessoasSingular + "!";
-  var pessoasSingular = "pessoas";
-  if(carro.quantidadePessoas >= carro.assentos){carroCheio};
-  if(carro.quantidadePessoas <= carro.assentos-1 && numeroDePessoas > carro.assentos){numeroDeAssentos};
-  if(carro.quantidadePessoas === 4){
-  pessoasSingular = "pessoa";
-  return numeroDeAssentos;
+carro.adicionarPessoas = function(numeroDePessoas) {
+	carro.quantidadePessoas + numeroDePessoas;
+	var carroCheio = "O carro já está lotado!";
+	var quantPessoasCabem = carro.quantidadePessoas;
+	var singularPessoas = carro.quantidadePessoas === 1 ? "pessoa" : "pessoas"
+	var limiteAssentos = "Só cabem mais " + quantPessoasCabem + " " + singularPessoas + "!"
+	
+	
+	if(numeroDePessoas > carro.assentos && carro.quantidadePessoas <= 4){
+	return limiteAssentos
+	
 };
+
+	if(carro.quantidadePessoas === carro.assentos){
+		return carroCheio	
+};
+
+	return "Já temos " + carro.quantidadePessoas + " pessoas no carro!"
 };
 
 /*
