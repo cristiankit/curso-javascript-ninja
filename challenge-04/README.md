@@ -123,24 +123,19 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 citado acima, no lugar de "pessoas".
 */
 carro.adicionarPessoas = function(numPessoas) {
-
-	var calcula = carro.assentos - carro.quantidadePessoas;
-	var pluralSingular = calcula === 1 ? "pessoa" : "pessoas";
-	if(numPessoas > carro.assentos && numPessoas > calcula){
-	return "só cabem 5 pessoas no carro e restam apenas "+ calcula +" " +  "lugar disponível";
+	var addPessoas = carro.quantidadePessoas + numPessoas;
+	var sobraAcentos = carro.assentos - carro.quantidadePessoas;
+	var singPlu = sobraAcentos === 1 ? "pessoa": "pessoas";
+	if(carro.quantidadePessoas === carro.assentos){
+	return "O carro já está lotado!";
+};
+	if(carro.quantidadePessoas < carro.assentos && addPessoas > carro.assentos ){
+	return "Só cabem mais " + sobraAcentos + " " + singPlu + "!"
 };
 
-	if(carro.quantidadePessoas < carro.assentos && numPessoas > calcula){
-	return "Só cabem mais " + calcula + " " + pluralSingular + "!"
+	var total = carro.quantidadePessoas += numPessoas;
+	return "Já temos " + total + " pessoas no carro!"
 };
-
-if(carro.quantidadePessoas === carro.assentos){
-	return "O carro já está lotado!"
-};
-	carro.quantidadePessoas += numPessoas;
-	return "Já temos " + carro.quantidadePessoas + " pessoas no carro!"
-};
-
 /*
 Agora vamos verificar algumas informações do carro. Para as respostas abaixo,
 utilize sempre o formato de invocação do método (ou chamada da propriedade),
@@ -149,38 +144,38 @@ retornar algum valor.
 
 Qual a cor atual do carro?
 */
-?
+carro.obterCor() // "azul"
 
 // Mude a cor do carro para vermelho.
-?
+carro.mudaCor("vermelho");
 
 // E agora, qual a cor do carro?
-?
+carro.obterCor() // "vermelho"
 
 // Mude a cor do carro para verde musgo.
-?
+carro.mudaCor("verde musgo")
 
 // E agora, qual a cor do carro?
-?
+carro.obterCor() // "verde musgo"
 
 // Qual a marca e modelo do carro?
-?
+carro.obterMarcaModelo() // "Esse carro é um gol sport"
 
 // Adicione 2 pessoas no carro.
-?
+carro.adicionarPessoas(2) // "Já temos 2 pessoas no carro!"
 
 // Adicione mais 4 pessoas no carro.
-?
+carro.adicionarPessoas(4) // "Só cabem mais 3 pessoas!"
 
 // Faça o carro encher.
-?
+carro.adicionarPessoas(3) // "Já temos 5 pessoas no carro!"
 
 // Tire 4 pessoas do carro.
-?
+carro.adicionarPessoas(-4) // "Já temos 1 pessoa no carro!"
 
 // Adicione 10 pessoas no carro.
-?
+carro.adicionarPessoas(10) // "Só cabem mais 4 pessoas!"
 
 // Quantas pessoas temos no carro?
-?
+carro.quantidadePessoas // 1
 ```
