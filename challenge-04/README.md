@@ -126,16 +126,38 @@ carro.adicionarPessoas = function(numPessoas) {
 	var addPessoas = carro.quantidadePessoas + numPessoas;
 	var sobraAcentos = carro.assentos - carro.quantidadePessoas;
 	var singPlu = sobraAcentos === 1 ? "pessoa": "pessoas";
-	if(carro.quantidadePessoas === carro.assentos){
+	//var sinPlulPessoas = carro.quantidadePessoas === 1 ? "pessoa" : "pessoas";
+	
+	if(carro.quantidadePessoas === carro.assentos && addPessoas >= carro.assentos){
 	return "O carro já está lotado!";
 };
-	if(carro.quantidadePessoas < carro.assentos && addPessoas > carro.assentos ){
+	if(sobraAcentos < 0 ){
+	carro.quantidadePessoas = 0;
+    };
+
+	if(addPessoas > carro.assentos){
 	return "Só cabem mais " + sobraAcentos + " " + singPlu + "!"
 };
 
 	var total = carro.quantidadePessoas += numPessoas;
-	return "Já temos " + total + " pessoas no carro!"
+	if(carro.quantidadePessoas <= 0 ){"carro vazio"};
+	var sinPlulPessoas = carro.quantidadePessoas === 1 ? "pessoa" : "pessoas";
+	var testeTotal  = total - numPessoas;
+	if (  total < 0 )
+	{ 
+	//carro.quantidadePessoas = 0;
+	return " você só pode tirar mais " + testeTotal + "!"
+	}
+	if(carro.quantidadePessoas >= 0 )
+	{
+	return "Já temos " + total + " " + sinPlulPessoas + " no carro!"
+    }
+	else
+	{
+ 		return "carro vazio"
+	};
 };
+	
 /*
 Agora vamos verificar algumas informações do carro. Para as respostas abaixo,
 utilize sempre o formato de invocação do método (ou chamada da propriedade),
