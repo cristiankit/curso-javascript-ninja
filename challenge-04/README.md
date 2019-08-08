@@ -126,36 +126,20 @@ carro.adicionarPessoas = function(numPessoas) {
 	var addPessoas = carro.quantidadePessoas + numPessoas;
 	var sobraAcentos = carro.assentos - carro.quantidadePessoas;
 	var singPlu = sobraAcentos === 1 ? "pessoa": "pessoas";
-	//var sinPlulPessoas = carro.quantidadePessoas === 1 ? "pessoa" : "pessoas";
+	
 	
 	if(carro.quantidadePessoas === carro.assentos && addPessoas >= carro.assentos){
 	return "O carro já está lotado!";
 };
-	if(sobraAcentos < 0 ){
-	carro.quantidadePessoas = 0;
-    };
-
+	
 	if(addPessoas > carro.assentos){
 	return "Só cabem mais " + sobraAcentos + " " + singPlu + "!"
 };
 
-	var total = carro.quantidadePessoas += numPessoas;
-	if(carro.quantidadePessoas <= 0 ){"carro vazio"};
+	carro.quantidadePessoas += numPessoas;
 	var sinPlulPessoas = carro.quantidadePessoas === 1 ? "pessoa" : "pessoas";
-	var testeTotal  = total - numPessoas;
-	if (  total < 0 )
-	{ 
-	//carro.quantidadePessoas = 0;
-	return " você só pode tirar mais " + testeTotal + "!"
-	}
-	if(carro.quantidadePessoas >= 0 )
-	{
-	return "Já temos " + total + " " + sinPlulPessoas + " no carro!"
-    }
-	else
-	{
- 		return "carro vazio"
-	};
+	return "Já temos " + carro.quantidadePessoas + " " + sinPlulPessoas + " no carro!"
+	
 };
 	
 /*
